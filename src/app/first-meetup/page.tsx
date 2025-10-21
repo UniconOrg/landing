@@ -92,9 +92,9 @@ export default function MeetupCard() {
             <section className="speakers" aria-label="Speakers">
               <div className="section-title">Speakers</div>
               <div className="speakers-list">
-                <SpeakerCard name="Majo Arias" topic="Más allá de los píxeles" image="/majo-arias.jpg" instagram="https://instagram.com/TU_USUARIO_MAJO" />
-                <SpeakerCard name="Alejandro Gómez" topic="JavaScript para el espacio" image="/alejandro-gomez.jpeg" instagram="https://instagram.com/TU_USUARIO_MAJO" />
-                <SpeakerCard name="Bruno Ramírez" topic="Cómo capitalizar tu hackathon" image="/bruno-ramirez.jpeg" instagram="https://instagram.com/TU_USUARIO_MAJO" />
+                <SpeakerCard name="Majo Arias" topic="Más allá de los píxeles" image="/majo-arias.jpg" instagram="https://www.instagram.com/mjota03" linkedin='https://www.linkedin.com/in/ariasmjota' />
+                <SpeakerCard name="Alejandro Gómez" topic="JavaScript para el espacio" image="/alejandro-gomez.jpeg" instagram="https://www.instagram.com/alejandro_lpts" linkedin='https://www.linkedin.com/in/agmez'/>
+                <SpeakerCard name="Bruno Ramírez" topic="Cómo capitalizar tu hackathon" image="/bruno-ramirez.jpeg" instagram="https://www.instagram.com/brunooosf" linkedin='https://www.linkedin.com/in/sergiobrunoramirez'/>
 
               </div>
             </section>
@@ -170,7 +170,7 @@ export default function MeetupCard() {
   );
 }
 
-function SpeakerCard({ name, topic, image, instagram }: { name: string, topic: string, image: string, instagram: string }) {
+function SpeakerCard({ name, topic, image, instagram, linkedin }: { name: string, topic: string, image: string, instagram: string, linkedin: string }) {
   return (
     <article className="rounded-xl overflow-hidden shadow-xl shadow-black/50 border border-slate-500/30 bg-gradient-to-b from-white/10 to-white/5">
 
@@ -192,7 +192,7 @@ function SpeakerCard({ name, topic, image, instagram }: { name: string, topic: s
           <div>
 
             <a
-              href={instagram}
+              href={linkedin}
               target="_blank"
               rel="noopener noreferrer"
               // Clases de Tailwind para estilo y color
