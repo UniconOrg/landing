@@ -65,7 +65,14 @@ export default function MeetupCard() {
               <Image src={logoSrc} alt="Logo UniconHub" width={160} height={140} />
 
             </div>
-            <a href="https://luma.com/o1xdg7ob" target="_blank" rel="noopener noreferrer">  <span className="badge">UNICONHUB DEVS · MEETUP</span></a>
+            <div className='flex items-center gap-2'>
+              <a href="https://luma.com/o1xdg7ob" target="_blank" rel="noopener noreferrer">
+                <span className="badge">UNICONHUB DEVS · MEETUP</span>
+              </a>
+              <a href="https://luma.com/o1xdg7ob" target="_blank" rel="noopener noreferrer">
+              <FiExternalLink size={20} className='hover:text-[var(--cyan)] transition-colors hover:scale-110'/>
+              </a>
+            </div>
             <h1> <span style={{ color: 'var(--cyan)' }}>Primera Meetup</span></h1>
             <p className="subtitle">Espacio tech juvenil para compartir sin egos: pasión, comunidad y aprendizaje.</p>
 
@@ -93,8 +100,8 @@ export default function MeetupCard() {
               <div className="section-title">Speakers</div>
               <div className="speakers-list">
                 <SpeakerCard name="Majo Arias" topic="Más allá de los píxeles" image="/majo-arias.jpg" instagram="https://www.instagram.com/mjota03" linkedin='https://www.linkedin.com/in/ariasmjota' />
-                <SpeakerCard name="Alejandro Gómez" topic="JavaScript para el espacio" image="/alejandro-gomez.jpeg" instagram="https://www.instagram.com/alejandro_lpts" linkedin='https://www.linkedin.com/in/agmez'/>
-                <SpeakerCard name="Bruno Ramírez" topic="Cómo capitalizar tu hackathon" image="/bruno-ramirez.jpeg" instagram="https://www.instagram.com/brunooosf" linkedin='https://www.linkedin.com/in/sergiobrunoramirez'/>
+                <SpeakerCard name="Alejandro Gómez" topic="JavaScript para el espacio" image="/alejandro-gomez.jpeg" instagram="https://www.instagram.com/alejandro_lpts" linkedin='https://www.linkedin.com/in/agmez' />
+                <SpeakerCard name="Bruno Ramírez" topic="Cómo capitalizar tu hackathon" image="/bruno-ramirez.jpeg" instagram="https://www.instagram.com/brunooosf" linkedin='https://www.linkedin.com/in/sergiobrunoramirez' />
 
               </div>
             </section>
