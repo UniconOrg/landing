@@ -2,7 +2,7 @@
 // components/MeetupCard.tsx
 import Head from 'next/head';
 import Image from 'next/image';
-import { FiExternalLink } from "react-icons/fi";
+import { FiExternalLink, FiLinkedin, FiInstagram } from "react-icons/fi";
 import { useMediaQuery } from 'react-responsive'; // Importa el hook
 // NOTA: Se ELIMINÓ la importación 'import styles from ...'
 // ya que has movido todas las clases a un archivo CSS global.
@@ -92,105 +92,10 @@ export default function MeetupCard() {
             <section className="speakers" aria-label="Speakers">
               <div className="section-title">Speakers</div>
               <div className="speakers-list">
-                <article className="rounded-xl overflow-hidden shadow-xl shadow-black/50 border border-slate-500/30 bg-gradient-to-b from-white/10 to-white/5">
+                <SpeakerCard name="Majo Arias" topic="Más allá de los píxeles" image="/majo-arias.jpg" instagram="https://instagram.com/TU_USUARIO_MAJO" />
+                <SpeakerCard name="Alejandro Gómez" topic="JavaScript para el espacio" image="/alejandro-gomez.jpeg" instagram="https://instagram.com/TU_USUARIO_MAJO" />
+                <SpeakerCard name="Bruno Ramírez" topic="Cómo capitalizar tu hackathon" image="/bruno-ramirez.jpeg" instagram="https://instagram.com/TU_USUARIO_MAJO" />
 
-                  {/* Contenedor de Imagen (Se mantiene igual) */}
-                  <div className="relative h-80 speaker-card-image">
-                    <Image src="/majo-arias.jpg" alt="Majo Arias" fill style={{ objectFit: 'cover' }} />
-                    {/* Si tenías un botón social sobre la imagen, estaría aquí */}
-                  </div>
-
-                  <div className="info p-4"> {/* Agregamos el padding 'p-4' de Tailwind */}
-
-                    {/* Contenedor Flexbox para alinear el Nombre a la Izquierda y el Enlace a la Derecha */}
-                    <div className="flex items-center justify-between mb-1">
-
-                      {/* Nombre del Orador (Se mantiene a la izquierda) */}
-                      <div className="name text-lg font-extrabold">Majo <br /> Arias</div>
-
-                      {/* Enlace de Instagram/Flecha (Se empuja a la derecha) */}
-                      <a
-                        href="https://instagram.com/TU_USUARIO_MAJO"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        // Clases de Tailwind para estilo y color
-                        className="text-[var(--turq)] hover:text-[var(--cyan)] transition-colors"
-                        title="Perfil de Majo Arias"
-                      >
-                        <FiExternalLink size={20} />
-                      </a>
-                    </div>
-
-                    {/* Tema de la Charla */}
-                    <div className="topic mt-1 text-sm text-[var(--muted)]">Más allá de los píxeles</div>
-                  </div>
-                </article>
-                <article className="rounded-xl overflow-hidden shadow-xl shadow-black/50 border border-slate-500/30 bg-gradient-to-b from-white/10 to-white/5">
-
-                  {/* Contenedor de Imagen (Se mantiene igual) */}
-                  <div className="relative h-80 speaker-card-image">
-                    <Image src="/alejandro-gomez.jpeg" alt="Alejandro Gómez" fill style={{ objectFit: 'cover' }} />
-                    {/* Si tenías un botón social sobre la imagen, estaría aquí */}
-                  </div>
-
-                  <div className="info p-4"> {/* Agregamos el padding 'p-4' de Tailwind */}
-
-                    {/* Contenedor Flexbox para alinear el Nombre a la Izquierda y el Enlace a la Derecha */}
-                    <div className="flex items-center justify-between mb-1">
-
-                      {/* Nombre del Orador (Se mantiene a la izquierda) */}
-                      <div className="name text-lg font-extrabold">Alejandro <br /> Gómez</div>
-
-                      {/* Enlace de Instagram/Flecha (Se empuja a la derecha) */}
-                      <a
-                        href="https://instagram.com/TU_USUARIO_MAJO"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        // Clases de Tailwind para estilo y color
-                        className="text-[var(--turq)] hover:text-[var(--cyan)] transition-colors"
-                        title="Perfil de Majo Arias"
-                      >
-                        <FiExternalLink size={20} />
-                      </a>
-                    </div>
-
-                    {/* Tema de la Charla */}
-                    <div className="topic mt-1 text-sm text-[var(--muted)]">JavaScript para el espacio</div>
-                  </div>
-                </article>
-                <article className="rounded-xl overflow-hidden shadow-xl shadow-black/50 border border-slate-500/30 bg-gradient-to-b from-white/10 to-white/5">
-
-                  {/* Contenedor de Imagen (Se mantiene igual) */}
-                  <div className="relative h-80 speaker-card-image">
-                    <Image src="/bruno-ramirez.jpeg" alt="Bruno Ramírez" fill style={{ objectFit: 'cover' }} />
-                    {/* Si tenías un botón social sobre la imagen, estaría aquí */}
-                  </div>
-
-                  <div className="info p-4"> {/* Agregamos el padding 'p-4' de Tailwind */}
-
-                    {/* Contenedor Flexbox para alinear el Nombre a la Izquierda y el Enlace a la Derecha */}
-                    <div className="flex items-center justify-between mb-1">
-
-                      {/* Nombre del Orador (Se mantiene a la izquierda) */}
-                      <div className="name text-lg font-extrabold">Bruno <br /> Ramírez</div>
-
-                      {/* Enlace de Instagram/Flecha (Se empuja a la derecha) */}
-                      <a
-                        href="https://instagram.com/TU_USUARIO_MAJO"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        // Clases de Tailwind para estilo y color
-                        className="text-[var(--turq)] hover:text-[var(--cyan)] transition-colors"
-                        title="Perfil de Majo Arias"
-                      >
-                        <FiExternalLink size={20} />
-                      </a>
-                    </div>
-
-                    {/* Tema de la Charla */}
-                    <div className="topic mt-1 text-sm text-[var(--muted)]">Cómo capitalizar tu hackathon</div>
-                  </div>
-                </article>
               </div>
             </section>
 
@@ -262,5 +167,57 @@ export default function MeetupCard() {
         </div>
       </div>
     </>
+  );
+}
+
+function SpeakerCard({ name, topic, image, instagram }: { name: string, topic: string, image: string, instagram: string }) {
+  return (
+    <article className="rounded-xl overflow-hidden shadow-xl shadow-black/50 border border-slate-500/30 bg-gradient-to-b from-white/10 to-white/5">
+
+      {/* Contenedor de Imagen (Se mantiene igual) */}
+      <div className="relative h-80 speaker-card-image">
+        <Image src={image} alt={name} fill style={{ objectFit: 'cover' }} />
+        {/* Si tenías un botón social sobre la imagen, estaría aquí */}
+      </div>
+
+      <div className="info p-4"> {/* Agregamos el padding 'p-4' de Tailwind */}
+
+        {/* Contenedor Flexbox para alinear el Nombre a la Izquierda y el Enlace a la Derecha */}
+        <div className="flex items-center justify-between mb-1">
+
+          {/* Nombre del Orador (Se mantiene a la izquierda) */}
+          <div className="name text-lg font-extrabold">{name}</div>
+
+          {/* Enlace de Instagram/Flecha (Se empuja a la derecha) */}
+          <div>
+
+            <a
+              href={instagram}
+              target="_blank"
+              rel="noopener noreferrer"
+              // Clases de Tailwind para estilo y color
+              className="text-white hover:text-[var(--cyan)] transition-colors"
+              title={`Perfil de ${name}`}
+            >
+              <FiLinkedin size={20} />
+            </a>
+            <div className='pb-2'></div>
+            <a
+              href={instagram}
+              target="_blank"
+              rel="noopener noreferrer"
+              // Clases de Tailwind para estilo y color
+              className="text-white hover:text-[var(--cyan)] transition-colors"
+              title={`Perfil de ${name}`}
+            >
+              <FiInstagram size={20} />
+            </a>
+          </div>
+        </div>
+
+        {/* Tema de la Charla */}
+        <div className="topic mt-1 text-sm text-[var(--muted)]">{topic}</div>
+      </div>
+    </article>
   );
 }
