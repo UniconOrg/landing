@@ -14,7 +14,7 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
+    --background: #0b1220;
     --foreground: #ededed;
   }
 }
@@ -23,4 +23,212 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+}
+
+
+/* components/MeetupCard.module.css */
+
+/* Variables CSS */
+:root {
+  --bg: #0b1220;
+  --panel: #0f172a;
+  --cyan: #37e0d7;
+  --turq: #00d1ff;
+  --muted: #93a4bd;
+  --white: #eaf6ff;
+  --glow: 0 0 16px rgba(55, 224, 215, 0.45), 0 0 32px rgba(0, 209, 255, 0.25);
+  --radius: 22px;
+}
+
+/* Estilos globales que deberían estar en globals.css o aplicarse al contenedor más externo */
+.mainContainer {
+  /* Esto emula el estilo del 'body' original, aplicado al contenedor externo en el componente */
+  color: var(--white);
+  background: radial-gradient(1200px 600px at 100% -10%, rgba(0, 209, 255, 0.12), transparent 60%),
+    radial-gradient(800px 500px at -10% 110%, rgba(55, 224, 215, 0.1), transparent 60%), var(--bg);
+  min-height: 100vh; /* Para emular body{height:100%} */
+}
+
+/* El contenedor principal que contiene todo */
+.wrap {
+  max-width: 1080px;
+  margin: 32px auto;
+  padding: 28px;
+}
+
+.card {
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--radius);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.04), rgba(255, 255, 255, 0.02));
+  border: 1px solid rgba(102, 136, 170, 0.25);
+  box-shadow: var(--glow);
+}
+
+.hero {
+  padding: 28px 28px 18px;
+  text-align: left;
+  background: linear-gradient(135deg, rgba(0, 209, 255, 0.12), rgba(55, 224, 215, 0.06) 40%, transparent 70%),
+    linear-gradient(0deg, rgba(255, 255, 255, 0.02), rgba(255, 255, 255, 0));
+}
+.logo img {
+  /* En Next.js, Image maneja el tamaño, esto es un ajuste */
+  height: 160px;
+  width: auto;
+  margin-bottom: -20px;
+  filter: drop-shadow(0 0 8px rgba(0, 209, 255, 0.3));
+}
+.badge {
+  display: inline-flex;
+  gap: 8px;
+  align-items: center;
+  padding: 6px 12px;
+  border: 1px solid rgba(0, 209, 255, 0.35);
+  border-radius: 999px;
+  color: var(--turq);
+  font-weight: 600;
+  letter-spacing: 0.4px;
+}
+h1 {
+  margin: 12px 0 8px;
+  font-size: clamp(28px, 5vw, 52px);
+  line-height: 1.05;
+  letter-spacing: 0.2px;
+}
+.subtitle {
+  color: var(--muted);
+  font-size: clamp(14px, 1.6vw, 18px);
+}
+
+.meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 18px;
+  margin-top: 16px;
+}
+.meta-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--white);
+  font-weight: 600;
+}
+.meta-item svg {
+  width: 18px;
+  height: 18px;
+  color: var(--turq);
+}
+
+.grid {
+  display: grid;
+  gap: 18px;
+  padding: 22px;
+}
+@media (min-width: 980px) {
+  .grid {
+    grid-template-columns: 1.1fr 0.9fr;
+  }
+}
+
+.speakers,
+.agenda {
+  border: 1px solid rgba(0, 209, 255, 0.18);
+  border-radius: var(--radius);
+  background: rgba(7, 12, 22, 0.55);
+}
+.section-title {
+  padding: 16px 18px;
+  font-weight: 800;
+  letter-spacing: 0.6px;
+  color: var(--cyan);
+  text-transform: uppercase;
+  border-bottom: 1px solid rgba(0, 209, 255, 0.18);
+}
+
+.speakers-list {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 18px;
+  padding: 18px;
+}
+@media (min-width: 620px) {
+  .speakers-list {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+.speaker-card {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.04), rgba(255, 255, 255, 0.02));
+  border: 1px solid rgba(147, 164, 189, 0.25);
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.35);
+}
+.speaker-card img {
+  /* Ajuste para Next.js Image: width:100% y height:auto/fijo en el componente */
+  height: 320px;
+  width: 100%;
+  object-fit: cover;
+  display: block;
+}
+.speaker-card .info {
+  padding: 14px 16px;
+}
+.speaker-card .name {
+  font-weight: 800;
+  font-size: 18px;
+}
+.speaker-card .topic {
+  color: var(--muted);
+  font-size: 15px;
+  margin-top: 6px;
+}
+
+.slot {
+  display: grid;
+  grid-template-columns: 90px 1fr;
+  gap: 14px;
+  padding: 16px 18px;
+  border-top: 1px dashed rgba(147, 164, 189, 0.25);
+}
+.slot:first-of-type {
+  border-top: none;
+}
+.time {
+  font-weight: 800;
+  color: var(--turq);
+}
+.title {
+  font-weight: 800;
+}
+.speaker {
+  color: var(--muted);
+  font-weight: 600;
+}
+
+.podcast-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 4px 10px;
+  border-radius: 999px;
+  border: 1px solid rgba(30, 215, 96, 0.35);
+  color: #1ed760;
+  background: rgba(30, 215, 96, 0.12);
+  font-size: 12px;
+  margin-top: 6px;
+}
+.podcast-badge svg {
+  width: 16px;
+  height: 16px;
+}
+
+footer {
+  margin: 22px 0 6px;
+  text-align: center;
+  color: var(--muted);
+  font-size: 13px;
+}
+.brand {
+  color: var(--cyan);
+  font-weight: 800;
 }
