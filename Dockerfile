@@ -5,10 +5,11 @@ ARG NODE_VERSION=22.12.0
 
 FROM node:${NODE_VERSION}-alpine AS base
 RUN apk add --no-cache libc6-compat
-# pnpm is activated through corepack; the lockfile pins the resolved dependencies.
+# pnpm is installed with npm at a pinned version (same as "packageManager" in package.json).
+# corepack is not used: the one bundled with this Node image cannot verify current npm signatures.
 ENV PNPM_HOME=/pnpm \
     PATH=/pnpm:$PATH
-RUN corepack enable
+RUN npm install -g pnpm@9.15.9
 WORKDIR /app
 
 FROM base AS deps
