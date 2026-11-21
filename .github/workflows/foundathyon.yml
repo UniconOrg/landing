@@ -1,0 +1,29 @@
+# Foundathyon Deploy: https://landing-hga716kh.foundathyon.dev
+# Needs the repository secret FOUNDATHYON_REGISTRY_TOKEN (Settings > Secrets and variables > Actions)
+# with the fdr_... token of the service. Configuring the service from the panel installs both.
+name: "Foundathyon Deploy (landing-hga716kh)"
+
+on:
+  workflow_dispatch:
+  push:
+    branches: ["main"]
+
+permissions:
+  contents: read
+
+concurrency:
+  group: "foundathyon-deploy-landing-hga716kh"
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: fundathyon/deploy-action@v1
+        with:
+          organization: "unicon"
+          service: "landing"
+          token: ${{ secrets.FOUNDATHYON_REGISTRY_TOKEN }}
+          registry: "registry.foundathyon.dev"
+          domain: "foundathyon.dev"
